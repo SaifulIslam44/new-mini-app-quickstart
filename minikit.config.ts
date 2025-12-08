@@ -1,36 +1,33 @@
-const ROOT_URL =
-  process.env.NEXT_PUBLIC_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000');
+const ROOT_URL = "https://new-mini-app-quickstart-theta-steel.vercel.app";
 
-/**
- * MiniApp configuration object. Must follow the Farcaster MiniApp specification.
- *
- * @see {@link https://miniapps.farcaster.xyz/docs/guides/publishing}
- */
 export const minikitConfig = {
   accountAssociation: {
     header: "",
     payload: "",
-    signature: ""
+    signature: "",
   },
+
+  baseBuilder: {
+    ownerAddress: "0xCd3a2C87cdf4B8dBD960E59163b30c428eFbFc20",
+  },
+
   miniapp: {
     version: "1",
-    name: "Cubey", 
-    subtitle: "Your AI Ad Companion", 
-    description: "Ads",
+    name: "GPP Official BD",
+    subtitle: "Google Play Points Tools BD",
+    description: "Tools and utilities for Google Play Points users in Bangladesh.",
     screenshotUrls: [`${ROOT_URL}/screenshot-portrait.png`],
     iconUrl: `${ROOT_URL}/blue-icon.png`,
     splashImageUrl: `${ROOT_URL}/blue-hero.png`,
     splashBackgroundColor: "#000000",
     homeUrl: ROOT_URL,
     webhookUrl: `${ROOT_URL}/api/webhook`,
-    primaryCategory: "social",
-    tags: ["marketing", "ads", "quickstart", "waitlist"],
-    heroImageUrl: `${ROOT_URL}/blue-hero.png`, 
-    tagline: "",
-    ogTitle: "",
-    ogDescription: "",
+    primaryCategory: "utility",
+    tags: ["gpp", "bd", "points", "tools"],
+    heroImageUrl: `${ROOT_URL}/blue-hero.png`,
+    tagline: "Simple tools for Play Points users in BD.",
+    ogTitle: "GPP Official BD",
+    ogDescription: "Mini app for Google Play Points tools in Bangladesh.",
     ogImageUrl: `${ROOT_URL}/blue-hero.png`,
   },
 } as const;
-
