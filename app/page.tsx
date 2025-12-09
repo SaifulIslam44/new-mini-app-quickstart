@@ -40,10 +40,10 @@ export default function Home() {
   //   userFid: string;
   // }>("/api/auth");
 
-  const { data: authData, isLoading: isAuthLoading, error: authError } = useQuickAuth<AuthResponse>(
-    "/api/auth",
-    { method: "GET" }
-  );
+  // const { data: authData, isLoading: isAuthLoading, error: authError } = useQuickAuth<AuthResponse>(
+  //   "/api/auth",
+  //   { method: "GET" }
+  // );
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -54,11 +54,11 @@ export default function Home() {
     e.preventDefault();
     setError("");
 
-    // Check authentication first
-    if (isAuthLoading) {
-      setError("Please wait while we verify your identity...");
-      return;
-    }
+    // // Check authentication first
+    // if (isAuthLoading) {
+    //   setError("Please wait while we verify your identity...");
+    //   return;
+    // }
 
     // if (authError || !authData?.success) {
     //   setError("Please authenticate to join the waitlist");
