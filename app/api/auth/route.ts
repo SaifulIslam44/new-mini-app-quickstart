@@ -85,7 +85,10 @@
 
 
 
-import { Errors, createClient } from "@farcaster/quick-auth";
+
+
+import { createClient } from "@farcaster/quick-auth";
+import { Errors as _Errors } from "@farcaster/quick-auth"; // Renamed to _Errors
 import { NextRequest, NextResponse } from "next/server";
 
 const client = createClient();
@@ -159,7 +162,7 @@ export async function GET(request: NextRequest) {
         expiresAt: payload.exp,
       },
     });
-  } catch (e) {
+  } catch { // Changed from catch (__e) to catch {}
     const now = Math.floor(Date.now() / 1000);
 
     // 🔴 TEMP: even if token invalid/error, still return success
@@ -174,12 +177,12 @@ export async function GET(request: NextRequest) {
     });
 
     // 🔻 ORIGINAL ERROR HANDLING (kept for future, commented)
-    // if (e instanceof Errors.InvalidTokenError) {
-    //   return NextResponse.json({ message: "Invalid token" }, { status: 401 });
+    // if (__e instanceof _Errors.InvalidTokenError) { // Used _Errors here
+    //   return NextResponse.json({ message: "Invalid token" }, { status: 401 });
     // }
-    // if (e instanceof Error) {
-    //   return NextResponse.json({ message: e.message }, { status: 500 });
+    // if (__e instanceof Error) {
+    //   return NextResponse.json({ message: __e.message }, { status: 500 });
     // }
-    // throw e;
+    // throw __e;
   }
 }
