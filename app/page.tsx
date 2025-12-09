@@ -60,10 +60,10 @@ export default function Home() {
       return;
     }
 
-    if (authError || !authData?.success) {
-      setError("Please authenticate to join the waitlist");
-      return;
-    }
+    // if (authError || !authData?.success) {
+    //   setError("Please authenticate to join the waitlist");
+    //   return;
+    // }
 
     if (!email) {
       setError("Please enter your email address");
