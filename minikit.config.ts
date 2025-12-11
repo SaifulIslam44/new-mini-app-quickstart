@@ -1,4 +1,5 @@
-const ROOT_URL = "https://new-mini-app-quickstart-theta-steel.vercel.app";
+const ROOT_URL = "https://new-mini-app-quickstart-theta-steel.vercel.app?v=2";
+
 
 export const minikitConfig = {
 accountAssociation: {
